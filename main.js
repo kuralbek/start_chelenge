@@ -102,6 +102,39 @@ class Student extends User{
     console.log(`my name is ${this.name} and my surename ${this.surename} and I learn ${this.year} year this university`);
 
  }
+ getCours(){
+  const random = 1+Math.random()*(5-1);
+  const intNumber = Math.round(random);
+  return intNumber;
+ }
 
 }
-const rob = new Student('Rob', 'Stark', 2);
+const rob = new Student('Rob', 'Stark',);
+
+// XML XHR
+
+fetch('https://jsonplaceholder.typicode.com/todos/6')
+.then( data => data.json())
+.then(json => {
+  const body = document.querySelector('body');
+
+body.innerHTML = `
+  <ul>
+  <li><input type='checkbox' value='${json.completed}'>
+  ${json.title}
+  </li>
+  
+`;
+console.log(json.completed);
+})
+.catch(Error => console.log(Error))
+
+
+
+
+
+
+
+
+
+
